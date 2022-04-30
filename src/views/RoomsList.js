@@ -3,9 +3,10 @@ import { RoomsListItem } from './RoomsListItem';
 export function RoomsList() {
 	const section = document.createElement('section');
 
-	section.className = 'title text-center text-light'
+	section.className = ' title text-center text-light';
 
 	section.innerHTML = `
+	
     <h2>Rooms List</2>
     <header>Loading ... </header>
     `;
@@ -17,9 +18,8 @@ export function RoomsList() {
 
 			const lis = rooms.map((room) => RoomsListItem(room));
 
-			
-
-			ul.className = 'rooms  justify-content-center align-items-center text-center'
+			ul.className =
+				'rooms  justify-content-center align-items-center text-center';
 			ul.append(...lis);
 			section.querySelector('header').remove();
 			section.append(ul);

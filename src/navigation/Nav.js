@@ -5,54 +5,41 @@ import { TreatmentsList } from '../views/TreatmentsList';
 import { Cart } from '../views/Cart';
 
 const navItems = [
-    { name: 'Home', component: Home },
-    { name: 'Rooms', component: RoomsList },
-    { name: 'Treatments', component: TreatmentsList },
-    { name: '🛒', component: Cart }
-    //kolene obiekty tutaj jesli wiecej rzeczy w menu
+	{ name: 'Home', url: '/', component: Home },
+	{ name: 'Rooms', url: 'rooms', component: RoomsList },
+	{ name: 'Treatments', url: 'treatments', component: TreatmentsList },
+	{ name: '🛒', url: 'cart', component: Cart },
 ];
 
 export function Nav() {
-    const nav = document.createElement('nav');
-    
-    nav.className ='nav  navbar bg-light fixed-top ';
-    
-    // const containerFluid = document.createElement ('containerFluid');
-    // containerFluid.className ='container-fluid'
-    
-    // nav.style.backgroundColor = '#ffc107';
-    // nav.style.display='flex';
-    // nav.style.justifyContent ='space-around';
-    // nav.style.alignItems='center'
+	const nav = document.createElement('nav');
 
-    const navButtons = navItems.map(item => {
-        return Button({
-            text: item.name,
-            classes: 'btn ',
-            onClick: event => {
-                const siblings = event.target.parentElement.children;
-                Array.from(siblings).forEach(element => {
-                    element.classList.remove('btn-active');
-                });
-                event.target.classList.add('btn-active');
+	nav.className = 'nav  navbar bg-light fixed-top ';
 
-                const customEvent = new CustomEvent('navigate', {
-                    detail: item.component
-                });
-        
-                document.body.dispatchEvent(customEvent);
-            }
-        });
-    });
+	const navButtons = navItems.map((item) => {
+		return Button({
+			text: item.name,
+			classes: 'btn ',
+			url: item.url,
+			onClick: (event) => {
+				const siblings = event.target.parentElement.children;
+				Array.from(siblings).forEach((element) => {
+					element.classList.remove('btn-active');
+				});
+				event.target.classList.add('btn-active');
 
-    // aktywujemy pierwszy guzik w menu -- Home
-    navButtons[0].classList.add('btn-active');
+				const customEvent = new CustomEvent('navigate', {
+					detail: item.component,
+				});
 
-    
-    nav.append(...navButtons);
-    
+				document.body.dispatchEvent(customEvent);
+			},
+		});
+	});
 
-    return nav;
+	navButtons[0].classList.add('btn-active');
+
+	nav.append(...navButtons);
+
+	return nav;
 }
-
-

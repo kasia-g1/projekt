@@ -3,6 +3,7 @@ import { RoomsList } from './RoomsList';
 
 const backButton = Button({
 	text: 'Back',
+	url: 'rooms',
 	classes: 'back btn btn-primary px-5 mt-5',
 	onClick: () => {
 		const customEvent = new CustomEvent('navigate', {
@@ -15,7 +16,6 @@ const backButton = Button({
 
 export function RoomDetails(id) {
 	const section = document.createElement('section');
-	// const img = document.createElement('img');
 
 	section.className =
 		'details  mt-5 justify-content-center align-items-center text-center text-light';
@@ -24,8 +24,6 @@ export function RoomDetails(id) {
             <h2>Room Details</h2>
             <header>Loading...</header>
         `;
-        // img.src = require('../assets/room.jpg');
-        // img.className = 'img_room';
 
 	fetch(`http://localhost:3000/rooms/${id}`)
 		.then((response) => response.json())
@@ -44,7 +42,6 @@ export function RoomDetails(id) {
                     <strong>${room.price.toFixed(2)} PLN</strong>
                 </p>
             `;
-
 
 			section.append(article, backButton);
 		});

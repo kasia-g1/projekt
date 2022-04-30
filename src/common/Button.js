@@ -1,5 +1,10 @@
 export function Button(options) {
-	const { text = '', classes = '', onClick = () => {} } = options;
+	const {
+		text = '',
+		classes = '',
+		url = location.href,
+		onClick = () => {},
+	} = options;
 
 	const button = document.createElement('button');
 
@@ -7,6 +12,7 @@ export function Button(options) {
 	button.innerText = text;
 	button.className = classes;
 	button.addEventListener('click', onClick);
+	button.addEventListener('click', () => history.pushState({}, '', url));
 
 	return button;
 }

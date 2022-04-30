@@ -7,6 +7,7 @@ import { Payment } from './Payment';
 const payButton = Button({
 	text: 'Payment',
 	classes: 'pay btn btn-primary px-5 mt-5',
+	url: 'payment',
 	onClick: () => {
 		const customEvent = new CustomEvent('navigate', {
 			detail: Payment,
@@ -18,7 +19,7 @@ const payButton = Button({
 
 export function Cart() {
 	const section = document.createElement('section');
-	section.className = 'text-light mt-5';
+	section.className = 'text-light mt-5 px-4';
 
 	section.innerHTML = `
         <h2>Cart</h2>
