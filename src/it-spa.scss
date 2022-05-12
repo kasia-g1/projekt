@@ -25,7 +25,9 @@ body {
 
 .nav {
 	display: flex;
+
 	justify-content: space-around;
+
 	align-items: center;
 }
 .btn {
@@ -55,7 +57,7 @@ body {
 
 .h1 {
 	font-size: 10rem;
-	margin-top: 6rem;
+	margin-top: 5rem;
 	text-transform: uppercase;
 }
 .p {
@@ -63,6 +65,7 @@ body {
 	margin-top: 10rem;
 	padding: 2rem;
 }
+
 label {
 	color: white;
 	margin-right: 2rem;
@@ -71,16 +74,24 @@ input {
 	margin-bottom: 3rem;
 }
 
-// rooms
 .rooms {
-	list-style: none;
-	margin-top: 4rem;
 	display: flex;
-	border: 1px solid rgb(24, 15, 15);
-	height: 30rem;
-	width: 100%;
 
+	flex-wrap: wrap;
+
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 1px solid rgb(24, 15, 15);
+	width: 100%;
 	background-image: url('./assets/computers.png');
+}
+
+.rooms-item {
+	flex: 0 1 calc(25% - 2rem);
+	margin: 1rem;
+	padding: 2rem;
 }
 
 .title {
@@ -98,6 +109,6 @@ input {
 
 .treatment {
 	background-image: url('./assets/relaxation.jpg');
-	background-size: cover;
 	background-position: center;
+	background-size: cover;
 }

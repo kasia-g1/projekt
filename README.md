@@ -1,11 +1,12 @@
 # IT SPA
 
-Aplikacja type Single Page Application. 
+Aplikacja type Single Page Application.
 
-Aplikacja umożliwia: 
+Aplikacja umożliwia:
 
 - Przeglądanie dostępnych zabiegów
 - Dodawanie wybranych zabiegów do koszyka
+- Wybór daty rezerwacji
 
 Bazę przykładowych pokoi i zabiegów znajduję się w pliku `database.json`.
 Aplikacja zwiera router. Po przjściu w menu na inny komponet zmienia się url.
@@ -14,12 +15,11 @@ Aplikacja zwiera router. Po przjściu w menu na inny komponet zmienia się url.
 
 - HTML, Bootstrap
 - CSS, Sass
-- JavaScript, 
-
-
+- JavaScript,
 
 ## Strona główna
 
-![Home](/src/assets/computers.png)
+![Home](/src/assets/home.JPG)
+![Home](/src/assets/rooms.JPG)
 
 
